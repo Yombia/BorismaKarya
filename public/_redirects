@@ -1,0 +1,5 @@
+# Pengalihan permanen (Cloudflare Workers static assets)
+/galeri /portofolio 301
+/galeri/ /portofolio 301
+/admin / 301
+/login / 301

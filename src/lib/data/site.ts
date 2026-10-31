@@ -23,6 +23,8 @@ export const CONTACT = {
     },
   ],
   phones: ["0813-7220-414", "0852-5424-7354"],
+  whatsapp: "628137220414",
+  whatsappDisplay: "0813-7220-414",
   email: "borismakarya.consulting@gmail.com",
   hours: "Senin–Sabtu, 08.00–17.00 WIB",
   socials: [
@@ -37,71 +39,26 @@ export const toTel = (phone: string) => `tel:+62${phone.replace(/\D/g, "").repla
 
 export const yearsActive = () => new Date().getFullYear() - SITE.foundedYear;
 
-export const SERVICES = [
-  {
-    key: "arsitektur",
-    title: "Perencanaan Arsitektur",
-    desc: "Perencanaan arsitektur, interior, dan lansekap, termasuk pengurusan PBG (Persetujuan Bangunan Gedung) dan SLF (Sertifikat Laik Fungsi).",
-  },
-  {
-    key: "sipil",
-    title: "Perencanaan Sipil",
-    desc: "Perencanaan struktur bangunan gedung, sipil transportasi (jalan, jembatan, dermaga), dan sipil keairan. Bidang pertama kami sejak 1989.",
-  },
-  {
-    key: "me",
-    title: "Mekanikal & Elektrikal",
-    desc: "Perencanaan sistem tata udara (HVAC), lift, pemipaan air bersih, air limbah, dan gas, serta sistem kelistrikan bangunan.",
-  },
-  {
-    key: "urban",
-    title: "Studi & Perencanaan Urban",
-    desc: "Kajian dan perencanaan kawasan perkotaan, tata ruang, serta penataan kawasan permukiman.",
-  },
-  {
-    key: "riset",
-    title: "Riset & Studi Kelayakan",
-    desc: "Studi kelayakan, studi bisnis, riset pertanian, kajian UMKM, dan penyusunan dokumen kajian untuk pemerintah daerah.",
-  },
-  {
-    key: "ti",
-    title: "Teknologi Informasi",
-    desc: "Pengembangan aplikasi, website, dan media promosi untuk instansi pemerintah maupun swasta.",
-  },
-  {
-    key: "pelatihan",
-    title: "Pelatihan & Event",
-    desc: "Penyelenggaraan pelatihan teknik, manajemen, pertanian, dan UMKM, serta pengelolaan acara.",
-  },
+export const WA_MESSAGES = {
+  umum: "Halo CV. Borisma Karya, saya ingin berkonsultasi mengenai rencana proyek saya.",
+  pbg: "Halo CV. Borisma Karya, saya ingin konsultasi pengurusan PBG/SLF untuk bangunan saya.",
+  proyek: (nama: string) =>
+    `Halo CV. Borisma Karya, saya melihat proyek ${nama} di website dan ingin berkonsultasi.`,
+} as const;
+
+/** Link WhatsApp dengan pesan otomatis. */
+export const waLink = (message: string = WA_MESSAGES.umum) =>
+  `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
+
+/** Nama instansi pengguna jasa (dari tabel pengalaman di company profile). Ditampilkan sebagai teks, bukan logo. */
+export const CLIENTS = [
+  "Dinas Pekerjaan Umum Kab. Samosir",
+  "Dinas Tata Ruang dan Permukiman Kab. Samosir",
+  "Dinas Pariwisata Kab. Samosir",
+  "BAPPEDA Kota Pematangsiantar",
+  "Dinas Perumahan, Kawasan Permukiman dan Penataan Ruang Kota Medan",
+  "Dinas Kebudayaan dan Pariwisata Provinsi Sumatera Utara",
+  "KPPN Pematangsiantar",
+  "Kantor Bea dan Cukai Pematangsiantar",
+  "GKPI – Rumah Lansia Sejahtera",
 ] as const;
-
-export type Project = {
-  id: string;
-  title: string;
-  category: string;
-  image?: string;
-  images?: string[];
-};
-
-// Render yang saat ini ada di repo (satu kawasan wisata: restoran, gazebo, kolam renang).
-// TODO: ganti dengan proyek resmi beserta namanya setelah file gambar dari klien diterima.
-export const DEFAULT_PROJECTS: Project[] = [
-  { id: "def1", title: "Restoran & Area Makan Terbuka", category: "Arsitektur", image: "/assets/images/portfolio/project-1.webp" },
-  { id: "def2", title: "Interior Restoran Semi-Terbuka", category: "Arsitektur", image: "/assets/images/portfolio/project-2.webp" },
-  { id: "def3", title: "Gazebo & Taman", category: "Lansekap", image: "/assets/images/portfolio/project-3.webp" },
-  { id: "def4", title: "Kolam Renang & Area Rekreasi", category: "Lansekap", image: "/assets/images/portfolio/project-4.webp" },
-  { id: "def5", title: "Fasad Restoran", category: "Arsitektur", image: "/assets/images/portfolio/project-5.webp" },
-  { id: "def6", title: "Restoran Tepi Kolam", category: "Arsitektur", image: "/assets/images/portfolio/project-6.webp" },
-];
-
-export const getProjectImages = (project: Project | null): string[] => {
-  if (!project) return [];
-  if (project.images && project.images.length > 0) return project.images;
-  if (project.image) return [project.image];
-  return [];
-};
-
-export const getCategories = (projects: Project[]) => [
-  "Semua",
-  ...Array.from(new Set(projects.map((p) => p.category))),
-];

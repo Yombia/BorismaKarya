@@ -1,26 +1,24 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/shared/Navbar";
-import { Footer } from "@/components/shared/Footer";
-import { SITE } from "@/lib/data/site";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { CONTACT, SITE } from "@/lib/data/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Plus Jakarta Sans (variabel 200–800), di-host sendiri agar build tidak bergantung pada Google Fonts.
+const jakarta = localFont({
+  src: "./fonts/plus-jakarta-sans-latin-wght-normal.woff2",
+  variable: "--font-jakarta",
+  weight: "200 800",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} | ${SITE.tagline} di Sumatera Utara`,
+    default: `${SITE.name} | Konsultan Perencanaan & Pengawasan di Sumatera Utara`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
@@ -28,10 +26,10 @@ export const metadata: Metadata = {
     "Borisma Karya",
     "CV Borisma Karya",
     "konsultan perencanaan Medan",
+    "konsultan perencanaan Samosir",
+    "jasa pengurusan PBG Medan",
+    "pengurusan SLF pabrik",
     "konsultan arsitektur Sumatera Utara",
-    "konsultan Samosir",
-    "pengurusan PBG",
-    "pengurusan SLF",
     "studi kelayakan",
   ],
   openGraph: {
@@ -39,7 +37,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} | ${SITE.tagline}`,
+    title: `${SITE.name} | Konsultan Perencanaan & Pengawasan`,
     description: SITE.description,
   },
 };
@@ -50,11 +48,13 @@ const organizationJsonLd = {
   name: SITE.name,
   url: SITE.url,
   logo: `${SITE.url}/assets/images/logo.jpg`,
+  image: `${SITE.url}/opengraph-image.jpg`,
   foundingDate: String(SITE.foundedYear),
   description: SITE.description,
-  email: "borismakarya.consulting@gmail.com",
+  email: CONTACT.email,
   telephone: "+628137220414",
   areaServed: "Sumatera Utara",
+  openingHours: "Mo-Sa 08:00-17:00",
   address: [
     {
       "@type": "PostalAddress",
@@ -73,32 +73,33 @@ const organizationJsonLd = {
       addressCountry: "ID",
     },
   ],
-  sameAs: [
-    "https://www.instagram.com/borisma_karya",
-    "https://www.facebook.com/706286335902224",
-    "https://www.tiktok.com/@borisma.karya7",
-  ],
+  sameAs: CONTACT.socials.map((s) => s.href),
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" suppressHydrationWarning className="scroll-smooth" data-scroll-behavior="smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-background text-foreground`}
-      >
+    <html lang="id" className={`${jakarta.variable} scroll-smooth`} data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        {/* Menandai bahwa JavaScript aktif, supaya animasi .reveal hanya menyembunyikan konten bila nanti bisa ditampilkan lagi. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
-          <Navbar />
-          <main className="flex-1 flex flex-col">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <a
+          href="#konten"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-paper focus:px-4 focus:py-2 focus:text-ink"
+        >
+          Lewati ke konten
+        </a>
+        <SiteHeader />
+        <main id="konten" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
+        <WhatsAppFloat />
       </body>
     </html>
   );
