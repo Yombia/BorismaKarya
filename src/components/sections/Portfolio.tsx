@@ -52,8 +52,7 @@ export function Portfolio() {
     return sizes[index % sizes.length];
   };
 
-  const getProjectImages = (project: any) => {
-    if (!project) return [];
+const getProjectImages = (project: any): string[] => {    if (!project) return [];
     if (project.images && project.images.length > 0) return project.images;
     if (project.image) return [project.image];
     return [];

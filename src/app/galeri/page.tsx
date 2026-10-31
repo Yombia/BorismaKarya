@@ -36,8 +36,7 @@ export default function GalleryPage() {
   });
 
   // Fungsi Ekstraksi Array Gambar
-  const getProjectImages = (project: any) => {
-    if (!project) return [];
+const getProjectImages = (project: any): string[] => {    if (!project) return [];
     if (project.images && project.images.length > 0) return project.images;
     if (project.image) return [project.image];
     return [];
