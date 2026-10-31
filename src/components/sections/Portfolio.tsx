@@ -6,35 +6,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-// Data Fallback SOTA
-const defaultProjects = [
-  { id: 'def1', title: "Eco-Resort & Cafe Masterplan", category: "Arsitektur", image: "/assets/images/portfolio/project-1.png" },
-  { id: 'def2', title: "Semi-Outdoor Dining Space", category: "Sipil", image: "/assets/images/portfolio/project-2.png" },
-  { id: 'def3', title: "Gazebo & Pavilion Integration", category: "Sipil", image: "/assets/images/portfolio/project-3.png" },
-  { id: 'def4', title: "Poolside Recreation Area", category: "Lansekap", image: "/assets/images/portfolio/project-4.png" },
-  { id: 'def5', title: "Modern Facade Design", category: "Arsitektur", image: "/assets/images/portfolio/project-5.png" },
-  { id: 'def6', title: "Outdoor Pathway & Greening", category: "Urban", image: "/assets/images/portfolio/project-6.png" }
-];
-
-const filters = ["Semua", "Arsitektur", "Sipil", "Lansekap", "Urban"];
+import { DEFAULT_PROJECTS, getCategories, getProjectImages, type Project } from "@/lib/data/site";
 
 export function Portfolio() {
-  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   
   const [activeFilter, setActiveFilter] = useState("Semua");
-  const [displayProjects, setDisplayProjects] = useState<any[]>([]);
+  const [displayProjects, setDisplayProjects] = useState<Project[]>(DEFAULT_PROJECTS);
 
   useEffect(() => {
     const savedData = localStorage.getItem("borisma_projects_sota");
     if (savedData) {
       const parsedData = JSON.parse(savedData);
       setDisplayProjects(parsedData.slice(0, 6)); 
-    } else {
-      setDisplayProjects(defaultProjects);
     }
   }, []);
+
+  const filters = getCategories(displayProjects);
 
   const filteredProjects = displayProjects.filter(project => 
     activeFilter === "Semua" || project.category === activeFilter
@@ -52,13 +41,7 @@ export function Portfolio() {
     return sizes[index % sizes.length];
   };
 
-const getProjectImages = (project: any): string[] => {    if (!project) return [];
-    if (project.images && project.images.length > 0) return project.images;
-    if (project.image) return [project.image];
-    return [];
-  };
-
-  const handleNext = (e: React.MouseEvent) => {
+const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation(); 
     const images = getProjectImages(selectedProject);
     setCurrentImgIndex((prev) => (prev + 1) % images.length);
@@ -71,15 +54,15 @@ const getProjectImages = (project: any): string[] => {    if (!project) return [
   };
 
   return (
-    <section id="portofolio" className="py-24 bg-brand-black relative z-10">
+    <section id="portofolio" className="py-24 bg-brand-black relative z-10 scroll-mt-20">
       <div className="container mx-auto px-4">
         
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-brand-gold font-bold uppercase tracking-widest text-sm mb-4">
-              Portofolio Proyek Terpilih
+              Portofolio
             </h2>
-            <h3 className="text-4xl md:text-5xl font-bold">Infrastruktur yang <br /> Menentukan <span className="text-brand-gold">Standar Baru</span></h3>
+            <h3 className="text-4xl md:text-5xl font-bold">Contoh Karya <span className="text-brand-gold">Perencanaan</span> Kami</h3>
           </div>
           
           <div className="flex flex-wrap gap-2 md:gap-4">
@@ -147,13 +130,13 @@ const getProjectImages = (project: any): string[] => {    if (!project) return [
           </AnimatePresence>
         </motion.div>
 
-        {/* --- TAUTAN SOTA YANG TELAH DIBERSIHKAN DARI ALERT --- */}
+        {/* Tautan ke galeri */}
         <div className="flex justify-center">
           <Link 
             href="/galeri"
             className="flex items-center gap-2 text-brand-gold hover:text-white font-bold tracking-widest uppercase text-sm border-b border-brand-gold hover:border-white transition-all pb-1"
           >
-            Lihat Seluruh Proyek Kami <ArrowRight className="w-4 h-4" />
+            Lihat Galeri Lengkap <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 

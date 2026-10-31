@@ -2,10 +2,10 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { yearsActive } from "@/lib/data/site";
 
-// Konfigurasi fisika animasi (SOTA) dengan Strict Typing
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -42,32 +42,32 @@ export function Hero() {
         <motion.div variants={itemVariants} className="mb-6 flex justify-center">
           <div className="inline-flex items-center rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-sm font-semibold text-brand-gold shadow-[0_0_10px_rgba(245,166,35,0.2)]">
             <span className="mr-2 h-2 w-2 rounded-full bg-brand-gold animate-pulse" />
-            Konsultan Konstruksi SOTA (State-of-the-Art)
+            Konsultan Perencanaan & Pengawasan · Sejak 1989
           </div>
         </motion.div>
         
         <motion.div variants={itemVariants}>
           <h1 className="mx-auto mb-6 max-w-5xl text-5xl font-extrabold tracking-tight md:text-7xl lg:text-8xl">
-            Membangun Struktur <br className="hidden md:block" />
+            Merencanakan Bangunan <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-[#FFD700] to-brand-gold">
-              Presisi Tinggi
+              dan Kawasan
             </span>
           </h1>
         </motion.div>
         
         <motion.div variants={itemVariants}>
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            PT. Borisma Karya menyediakan solusi konsultansi teknis mutakhir. Kami mengintegrasikan inovasi desain arsitektural dengan integritas struktural absolut untuk masa depan infrastruktur Indonesia.
+            Selama {yearsActive()} tahun, CV. Borisma Karya membantu pemerintah daerah dan swasta di Sumatera Utara dalam perencanaan arsitektur, sipil, mekanikal-elektrikal, tata kota, studi kelayakan, serta pengurusan PBG dan SLF.
           </p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col justify-center gap-4 sm:flex-row">
-          <Button size="lg" className="h-12 bg-brand-gold px-8 text-base font-bold text-black transition-all hover:scale-105 hover:bg-brand-gold/90 active:scale-95">
+          <Link href="/#portofolio" className="inline-flex h-12 items-center justify-center rounded-lg bg-brand-gold px-8 text-base font-bold text-black transition-all hover:scale-105 hover:bg-brand-gold/90 active:scale-95">
             Lihat Portofolio <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button size="lg" variant="outline" className="h-12 border-brand-gold/50 px-8 text-base font-semibold text-brand-gold transition-all hover:bg-brand-gold/10">
-            Hubungi Tim Ahli
-          </Button>
+          </Link>
+          <Link href="/#kontak" className="inline-flex h-12 items-center justify-center rounded-lg border border-brand-gold/50 px-8 text-base font-semibold text-brand-gold transition-all hover:bg-brand-gold/10">
+            Hubungi Kami
+          </Link>
         </motion.div>
       </motion.div>
     </section>

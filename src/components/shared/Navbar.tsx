@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   // State Manager untuk mendeteksi status buka/tutup menu mobile
@@ -21,6 +20,7 @@ export function Navbar() {
     { name: "Tentang Kami", path: "/tentang" },
     { name: "Layanan", path: "/#layanan" },
     { name: "Portofolio", path: "/#portofolio" },
+    { name: "Galeri", path: "/galeri" },
   ];
 
   return (
@@ -32,7 +32,7 @@ export function Navbar() {
           <div className="relative h-12 w-12 overflow-hidden rounded-md border border-brand-gold/20">
             <Image 
               src="/assets/images/logo.jpg" 
-              alt="Logo PT. Borisma Karya" 
+              alt="Logo CV. Borisma Karya" 
               fill 
               sizes="48px"
               className="object-cover mix-blend-screen transition-transform group-hover:scale-110"
@@ -44,12 +44,12 @@ export function Navbar() {
               BORISMA <span className="text-brand-gold text-sm ml-1 tracking-widest uppercase">Karya</span>
             </span>
             <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] mt-1">
-              General Contractor
+              Konsultan Perencanaan
             </span>
           </div>
         </Link>
 
-        {/* Navigasi Desktop (SOTA Routing) */}
+        {/* Navigasi Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link 
@@ -60,9 +60,9 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button className="bg-brand-gold text-black font-bold hover:bg-brand-gold/90 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(245,166,35,0.2)]">
-            Mulai Proyek
-          </Button>
+          <Link href="/#kontak" className="inline-flex h-9 items-center rounded-lg px-4 text-sm bg-brand-gold text-black font-bold hover:bg-brand-gold/90 transition-all hover:scale-105 active:scale-95">
+            Hubungi Kami
+          </Link>
         </div>
 
         {/* Tombol Toggle Mobile (Hamburger Menu) */}
@@ -75,7 +75,7 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Panel Navigasi Mobile (Laci SOTA) */}
+      {/* Panel Navigasi Mobile */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -96,9 +96,9 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Button onClick={closeMenu} className="w-full mt-4 bg-brand-gold text-black font-bold hover:bg-brand-gold/90 h-12">
-                Konsultasi Sekarang
-              </Button>
+              <Link href="/#kontak" onClick={closeMenu} className="flex w-full mt-4 h-12 items-center justify-center rounded-lg bg-brand-gold text-black font-bold hover:bg-brand-gold/90">
+                Hubungi Kami
+              </Link>
             </div>
           </motion.div>
         )}

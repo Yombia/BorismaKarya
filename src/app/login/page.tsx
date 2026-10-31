@@ -52,14 +52,14 @@ export default function LoginPage() {
             <div className="w-16 h-16 bg-brand-black border border-brand-gold/30 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(245,166,35,0.2)]">
               <ShieldCheck className="w-8 h-8 text-brand-gold" />
             </div>
-            <h1 className="text-2xl font-bold text-white mb-2">Pusat Komando</h1>
-            <p className="text-muted-foreground text-sm text-center">Masukkan kredensial otorisasi untuk mengakses data infrastruktur.</p>
+            <h1 className="text-2xl font-bold text-white mb-2">Masuk Admin</h1>
+            <p className="text-muted-foreground text-sm text-center">Halaman ini khusus pengelola website.</p>
           </div>
 
           {error && (
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center gap-3 text-red-400 text-sm">
               <AlertCircle className="w-5 h-5 shrink-0" />
-              <p>Akses Ditolak. Kredensial tidak valid.</p>
+              <p>Nama pengguna atau kata sandi salah.</p>
             </motion.div>
           )}
 
@@ -101,7 +101,7 @@ export default function LoginPage() {
           
           <div className="mt-8 pt-6 border-t border-white/10 text-center">
             <Link href="/" className="text-muted-foreground hover:text-brand-gold transition-colors text-sm flex items-center justify-center gap-2">
-              <ArrowRight className="w-4 h-4 rotate-180" /> Kembali ke Fasad Utama
+              <ArrowRight className="w-4 h-4 rotate-180" /> Kembali ke Beranda
             </Link>
           </div>
 

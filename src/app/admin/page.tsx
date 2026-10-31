@@ -12,8 +12,8 @@ import Image from "next/image";
 export default function AdminDashboard() {
   // Gunakan struktur data baru yang mendukung "images" (array)
   const [projects, setProjects] = useState<any[]>([
-    { id: 1, title: "Eco-Resort & Cafe", category: "Arsitektur", images: ["/assets/images/portfolio/project-1.png"] },
-    { id: 2, title: "Semi-Outdoor Dining", category: "Sipil", images: ["/assets/images/portfolio/project-2.png"] },
+    { id: 1, title: "Eco-Resort & Cafe", category: "Arsitektur", images: ["/assets/images/portfolio/project-1.webp"] },
+    { id: 2, title: "Semi-Outdoor Dining", category: "Sipil", images: ["/assets/images/portfolio/project-2.webp"] },
   ]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -108,7 +108,7 @@ export default function AdminDashboard() {
           <div>
             <div className="flex items-center gap-3 text-brand-gold mb-2">
               <LayoutDashboard size={20} />
-              <span className="text-xs font-bold uppercase tracking-widest">Pusat Komando Utama</span>
+              <span className="text-xs font-bold uppercase tracking-widest">Panel Admin</span>
             </div>
             <h1 className="text-4xl font-bold">Dashboard <span className="text-brand-gold">Borisma</span></h1>
           </div>
