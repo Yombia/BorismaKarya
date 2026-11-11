@@ -40,7 +40,7 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       {
         key: "arsitektur",
         title: "Arsitektur",
-        scope: "Arsitektur, interior, lanskap, serta pengurusan PBG dan SLF.",
+        scope: "Pekerjaan perencanaan arsitektur, interior, lanskap, pengawasan teknis, serta pengurusan PBG dan SLF.",
         details: [
           "Perencanaan arsitektur bangunan dan kawasan",
           "Perencanaan interior dan lanskap",

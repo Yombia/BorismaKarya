@@ -49,8 +49,6 @@ function ServiceRow({ service, code }: { service: Service; code: string }) {
             </li>
           ))}
         </ul>
-
-        {service.extra && <p className="mt-6 max-w-[64ch] text-[15px] leading-relaxed text-ink-soft">{service.extra}</p>}
       </div>
     </article>
   );
