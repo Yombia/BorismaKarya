@@ -63,15 +63,6 @@ function ServiceRow({ service, code }: { service: Service; code: string }) {
                 </li>
               ))}
             </ul>
-            {service.bidangFilter && (
-              <Link
-                href={`/pengalaman?bidang=${encodeURIComponent(service.bidangFilter)}`}
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-navy-800 underline-offset-4 hover:underline"
-              >
-                Lihat paket bidang {service.bidangFilter}
-                <ArrowRight aria-hidden="true" className="h-4 w-4" />
-              </Link>
-            )}
           </div>
         )}
       </div>

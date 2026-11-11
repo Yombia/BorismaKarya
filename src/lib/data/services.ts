@@ -17,7 +17,7 @@ export type Service = {
   head: { name: string; note?: string };
   /** Nomor paket pada tabel pengalaman yang dijadikan contoh. */
   examples: number[];
-  /** Filter bidang untuk halaman /pengalaman. */
+  /** Bidang terkait di data pengalaman (pengelompokan statistik). */
   bidangFilter?: Bidang;
   /** Teks tambahan bila belum ada contoh di tabel pengalaman. */
   extra?: string;

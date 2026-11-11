@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/site/ButtonLink";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { PENGALAMAN, hitungPerLokasi } from "@/lib/data/pengalaman";
+import { RENTANG_TAHUN, hitungPerLokasi } from "@/lib/data/pengalaman";
 
 export function WorkArea() {
   const rows = hitungPerLokasi();
@@ -9,8 +9,6 @@ export function WorkArea() {
   const lainnya = rows.slice(7);
   const sisa = lainnya.reduce((n, r) => n + r.jumlah, 0);
   const max = top[0]?.jumlah ?? 1;
-  const total = PENGALAMAN.length;
-  const samosir = rows.find((r) => r.lokasi === "Samosir")?.jumlah ?? 0;
 
   return (
     <section aria-labelledby="wilayah-judul" className="bg-mist section-y">
@@ -20,11 +18,11 @@ export function WorkArea() {
             index="04"
             label="Wilayah kerja"
             title={<span id="wilayah-judul">Paling banyak bekerja di Kawasan Danau Toba</span>}
-            intro={`${samosir} dari ${total} paket pekerjaan kami berada di Kabupaten Samosir. Sisanya tersebar di Medan, Pematangsiantar, Simalungun, dan kabupaten lain di Sumatera Utara.`}
+            intro="Sebagian besar pekerjaan kami berada di Kabupaten Samosir. Sisanya tersebar di Medan, Pematangsiantar, Simalungun, dan kabupaten/kota lain di Sumatera Utara."
           />
           <div className="mt-8">
-            <ButtonLink href="/pengalaman" variant="navy">
-              Lihat daftar pengalaman
+            <ButtonLink href="/portofolio#data-proyek" variant="navy">
+              Lihat data proyek
               <ArrowRight className="h-4 w-4" />
             </ButtonLink>
           </div>
@@ -72,7 +70,7 @@ export function WorkArea() {
               )}
             </tbody>
           </table>
-          <p className="mt-4 text-xs text-ink-soft">Sumber: daftar pengalaman perusahaan 2005–2024.</p>
+          <p className="mt-4 text-xs text-ink-soft">Sumber: daftar pengalaman perusahaan {RENTANG_TAHUN.awal}–{RENTANG_TAHUN.akhir}.</p>
         </div>
       </div>
     </section>

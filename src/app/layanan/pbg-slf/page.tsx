@@ -1,6 +1,6 @@
 // src/app/layanan/pbg-slf/page.tsx — Layanan pengurusan PBG & SLF (isi dari brosur resmi)
 import Image from "next/image";
-import { Building2, Check, Factory, Home, Phone, ShieldCheck, Store, Warehouse } from "lucide-react";
+import { ArrowRight, Building2, Check, Factory, Home, Phone, ShieldCheck, Store, Warehouse } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ButtonLink } from "@/components/site/ButtonLink";
@@ -210,6 +210,12 @@ export default function PbgSlfPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-8">
+            <ButtonLink href="/portofolio#pbg-slf" variant="outline-dark">
+              Lihat pengalaman PBG &amp; SLF kami
+              <ArrowRight className="h-4 w-4" />
+            </ButtonLink>
+          </div>
         </div>
       </section>
 

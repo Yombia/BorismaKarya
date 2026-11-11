@@ -17,7 +17,7 @@ export function Logo({ tone = "light", onClick, compact = false }: Props) {
           <span className="sr-only">CV. </span>BORISMA KARYA
         </span>
         <span className={`mt-1 text-[10px] font-medium uppercase tracking-[0.14em] ${sub} ${compact ? "hidden sm:block" : ""}`}>
-          Konsultan Perencanaan & Pengawasan
+          KONSULTAN TEKNIK & BISNIS
         </span>
         <span className="sr-only">, ke beranda</span>
       </span>

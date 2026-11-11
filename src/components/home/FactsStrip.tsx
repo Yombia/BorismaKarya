@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CLIENTS, CONTACT, yearsActive } from "@/lib/data/site";
-import { PENGALAMAN, RENTANG_TAHUN } from "@/lib/data/pengalaman";
+import { JUMLAH_PENGGUNA_JASA, RENTANG_TAHUN } from "@/lib/data/pengalaman";
 import { SERVICE_GROUPS } from "@/lib/data/services";
 
 export function FactsStrip() {
   const jumlahBidang = SERVICE_GROUPS.reduce((n, g) => n + g.items.length, 0);
   const facts = [
     { value: String(yearsActive()), label: "Tahun berdiri", note: "Sejak 16 Oktober 1989" },
-    { value: String(PENGALAMAN.length), label: "Paket pekerjaan", note: `Tercatat ${RENTANG_TAHUN.awal}–${RENTANG_TAHUN.akhir}` },
+    { value: String(JUMLAH_PENGGUNA_JASA), label: "Pengguna jasa", note: `Pemerintah dan swasta, ${RENTANG_TAHUN.awal}–${RENTANG_TAHUN.akhir}` },
     { value: String(jumlahBidang), label: "Bidang layanan", note: "Dipimpin tenaga ahli" },
     { value: String(CONTACT.offices.length), label: "Kantor", note: "Medan dan Samosir" },
   ];
@@ -45,10 +45,10 @@ export function FactsStrip() {
               ))}
             </ul>
             <Link
-              href="/pengalaman"
+              href="/portofolio#data-proyek"
               className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 underline-offset-4 hover:underline"
             >
-              Lihat daftar lengkap {PENGALAMAN.length} paket pekerjaan
+              Lihat data proyek kami
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

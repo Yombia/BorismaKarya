@@ -8,7 +8,6 @@ import { Reveal } from "@/components/site/Reveal";
 import { ContactCta } from "@/components/site/ContactCta";
 import { HISTORY, VISI_MISI } from "@/lib/data/company";
 import { DEPARTMENT_HEADS, DIRECTOR, ORGANIZATION, initials, type TeamMember } from "@/lib/data/team";
-import { PENGALAMAN } from "@/lib/data/pengalaman";
 import { CONTACT, SITE, waLink, yearsActive } from "@/lib/data/site";
 import { pageMetadata } from "@/lib/seo";
 
@@ -78,7 +77,7 @@ export default function TentangPage() {
   const facts = [
     { v: String(SITE.foundedYear), k: "Tahun berdiri" },
     { v: `${yearsActive()} tahun`, k: "Pengalaman" },
-    { v: String(PENGALAMAN.length), k: "Paket pekerjaan tercatat" },
+    { v: String(DEPARTMENT_HEADS.length), k: "Departemen" },
     { v: String(CONTACT.offices.length), k: "Kantor: Medan dan Samosir" },
   ];
 

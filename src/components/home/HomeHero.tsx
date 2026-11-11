@@ -16,15 +16,14 @@ export function HomeHero() {
         <div className="lg:col-span-7 lg:pr-6">
           <p className="eyebrow flex flex-wrap items-center gap-x-3 gap-y-1 text-gold-500">
             <span aria-hidden="true" className="h-px w-8 bg-gold-500" />
-            Konsultan Perencanaan & Pengawasan
+            KONSULTAN TEKNIK & BISNIS 
           </p>
           <h1 className="mt-6 text-[clamp(2.375rem,4.4vw,3.625rem)] font-extrabold leading-[1.06] tracking-[-0.02em]">
-            Merencanakan bangunan dan kawasan di Sumatera Utara sejak {SITE.foundedYear}.
+            Layanan Konsultasi Teknik, Bisnis, dan Pendampingan Masyarakat sejak {SITE.foundedYear}
           </h1>
           <p className="mt-6 max-w-[56ch] text-[1.0625rem] leading-[1.7] text-white/75">
-            CV. Borisma Karya mengerjakan perencanaan arsitektur, sipil, mekanikal-elektrikal, dan kawasan,
-            pengawasan teknis, studi kelayakan, serta pengurusan PBG dan SLF untuk pemerintah daerah dan
-            swasta.
+            CV. Borisma Karya memberikan layanan perencanaan teknik secara luas, meliputi desain arsitektur, sipil, Mekanikal-Elektrikal-Plumbing (MEP) dan urban.
+            Selain itu melakukan pengawasan teknis dan manajemen konstruksi, penyusunan studi kelayakan dan bisnis, dan teknologi informasi. Kami juga membantu pengurusan PBG dan SLF.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href={waLink()} variant="gold">

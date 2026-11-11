@@ -27,13 +27,13 @@ npm run lint     # harus 0 error
 | `/` | Beranda |
 | `/layanan` | 7 bidang layanan dalam 3 kelompok |
 | `/layanan/pbg-slf` | Layanan pengurusan PBG dan SLF |
-| `/portofolio` | 17 proyek, dengan filter kategori |
+| `/portofolio` | 17 proyek (filter kategori), pengalaman PBG & SLF 2025–2026, dan data total proyek |
 | `/portofolio/[slug]` | Detail proyek: konteks, tantangan, konsep desain, galeri + lightbox |
-| `/pengalaman` | Tabel 97 paket pekerjaan dengan pencarian dan filter (bisa dibuka dengan `?bidang=Arsitektur`, `?tahun=2016`, dll.) |
 | `/tentang` | Profil, sejarah, struktur organisasi, tim ahli |
 | `/pemberdayaan` | Website desa E-Surat, pelatihan warga, riset dan kajian |
 | `/kontak` | Dua kantor, peta, WhatsApp, telepon, email |
-| `/galeri` | URL lama, dialihkan ke `/portofolio` (301 lewat `public/_redirects`) |
+| `/galeri` | Foto dokumentasi (filter + lightbox). Demo tambah foto tampil saat `npm run dev` atau di `/galeri?demo=1` |
+| `/pengalaman` | URL lama, dialihkan ke `/portofolio#data-proyek` (301 lewat `public/_redirects`) |
 
 ## Mengubah isi
 
@@ -46,7 +46,8 @@ Semua teks data ada di `src/lib/data/`. Halaman membaca dari file-file ini, jadi
 | `pbg.ts` | Isi halaman PBG & SLF (dari brosur), termasuk FAQ |
 | `projects.ts` | Data 17 proyek portofolio |
 | `project-images.ts` | Daftar gambar per proyek (dibuat otomatis dari PDF) |
-| `pengalaman.ts` | Tabel 97 paket pekerjaan |
+| `pengalaman.ts` | Paket pekerjaan dari company profile + daftar pengalaman 2025–2026 (dipakai untuk data proyek) |
+| `galeri.ts` | Foto halaman Galeri |
 | `team.ts` | Direktur, kepala departemen, struktur organisasi |
 | `company.ts` | Sejarah perusahaan dan visi/misi |
 | `pemberdayaan.ts` | E-Surat, pelatihan warga, daftar riset |
@@ -69,6 +70,11 @@ Data yang masih perlu dikonfirmasi ditandai di kode. Cari dengan:
 ```bash
 grep -rn "\[KONFIRMASI\]\|\[MENUNGGU DARI KLIEN\]\|\[CEK DUPLIKAT\]" src
 ```
+
+## Demo galeri
+
+Formulir "Tambah foto ke galeri" hanya simulasi: foto disimpan di IndexedDB browser yang dipakai, tidak dikirim ke server.
+Setelah disetujui klien, bagian ini diganti dengan halaman admin (login) dan penyimpanan di server.
 
 ## Catatan
 

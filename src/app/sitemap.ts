@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.7,
     })),
-    { url: `${SITE.url}/pengalaman`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${SITE.url}/galeri`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE.url}/tentang`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     { url: `${SITE.url}/pemberdayaan`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE.url}/kontak`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },

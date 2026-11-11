@@ -1,6 +1,7 @@
-// Daftar paket pekerjaan CV. Borisma Karya (2005–2024).
-// Sumber: tabel "Pengalaman Perusahaan" di company profile (PDF), ditranskripsi otomatis lalu dirapikan.
-// subBidang = teks asli dari dokumen; bidang = pengelompokan untuk filter di website.
+// Daftar paket pekerjaan CV. Borisma Karya.
+// - PENGALAMAN: tabel "Pengalaman Perusahaan" di company profile (PDF, 2005–2024), ditranskripsi lalu dirapikan.
+// - PENGALAMAN_TERBARU: "Daftar Pengalaman 2025–2026" (dokumen Word dari klien), terutama pengurusan PBG dan SLF.
+// subBidang = teks asli dari dokumen; bidang = pengelompokan untuk statistik di website.
 
 export type Bidang =
   | "Arsitektur"
@@ -9,7 +10,8 @@ export type Bidang =
   | "Sipil Keairan"
   | "Perencanaan Wilayah"
   | "Studi & Penelitian"
-  | "Teknologi Informasi";
+  | "Teknologi Informasi"
+  | "PBG & SLF";
 
 export type Paket = {
   no: number;
@@ -122,21 +124,40 @@ export const PENGALAMAN: Paket[] = [
   { no: 97, paket: "Jasa Konsultansi Penyusunan Detail Engineering Design (DED) Rumah Agave", subBidang: "Arsitektur", bidang: "Arsitektur", lokasi: "Pematangsiantar", penggunaJasa: "Perorangan" /* nama pemilik rumah pribadi tidak ditampilkan */, tahun: 2024 },
 ];
 
+/** Pengalaman 2025–2026 (nomor urut mengikuti dokumen sumber). */
+export const PENGALAMAN_TERBARU: Paket[] = [
+  { no: 1, paket: "Pengurusan PBG & SLF Water Park", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Batu Bara", penggunaJasa: "CV. Dogi Park", tahun: 2026 },
+  { no: 2, paket: "Pengurusan PBG Rumah Tinggal", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Medan", penggunaJasa: "Perorangan", tahun: 2026 },
+  { no: 3, paket: "Pengurusan PBG Rumah Tinggal", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Medan", penggunaJasa: "Perorangan", tahun: 2026 },
+  { no: 4, paket: "Pengurusan PBG & SLF Optik Melawai", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Pematangsiantar", penggunaJasa: "Optik Melawai", tahun: 2026 },
+  { no: 5, paket: "Pengurusan PBG & SLF Gedung Gudang", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Gunungsitoli", penggunaJasa: "PT. Arken Jaya Perkasa", tahun: 2026 },
+  { no: 6, paket: "Pengurusan PBG & SLF Gudang dan Kantor", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Medan", penggunaJasa: "PT. Fastrata Buana", tahun: 2026 },
+  { no: 7, paket: "Perencanaan DED Rumah Makan Asrama Putra SMA Unggul HKBP Nommensen", subBidang: "Arsitektur", bidang: "Arsitektur", lokasi: "Pematangsiantar", penggunaJasa: "SMA Unggul HKBP Nommensen", tahun: 2026 },
+  { no: 8, paket: "Pengurusan PBG & SLF Kantor dan Gudang", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Nias Utara", penggunaJasa: "PT. Berkah Nias Gemilang", tahun: 2025 },
+  { no: 9, paket: "Pengurusan PBG & SLF Kantor dan Gudang", subBidang: "Perencanaan", bidang: "PBG & SLF", lokasi: "Gunungsitoli", penggunaJasa: "PT. Tiarsa Abadi Perkasa Gemilang", tahun: 2025 },
+];
+
+/** Semua paket (company profile + 2025–2026), dipakai untuk data total proyek. */
+export const SEMUA_PAKET: Paket[] = [...PENGALAMAN, ...PENGALAMAN_TERBARU];
+
 /** Jumlah paket per kabupaten/kota, urut dari terbanyak. */
-export function hitungPerLokasi(data: Paket[] = PENGALAMAN) {
+export function hitungPerLokasi(data: Paket[] = SEMUA_PAKET) {
   const map = new Map<string, number>();
   for (const p of data) map.set(p.lokasi, (map.get(p.lokasi) ?? 0) + 1);
   return [...map.entries()].map(([lokasi, jumlah]) => ({ lokasi, jumlah })).sort((a, b) => b.jumlah - a.jumlah);
 }
 
 /** Jumlah paket per bidang, urut dari terbanyak. */
-export function hitungPerBidang(data: Paket[] = PENGALAMAN) {
+export function hitungPerBidang(data: Paket[] = SEMUA_PAKET) {
   const map = new Map<string, number>();
   for (const p of data) map.set(p.bidang, (map.get(p.bidang) ?? 0) + 1);
   return [...map.entries()].map(([bidang, jumlah]) => ({ bidang, jumlah })).sort((a, b) => b.jumlah - a.jumlah);
 }
 
 export const RENTANG_TAHUN = {
-  awal: Math.min(...PENGALAMAN.map((p) => p.tahun)),
-  akhir: Math.max(...PENGALAMAN.map((p) => p.tahun)),
+  awal: Math.min(...SEMUA_PAKET.map((p) => p.tahun)),
+  akhir: Math.max(...SEMUA_PAKET.map((p) => p.tahun)),
 };
+
+/** Jumlah pengguna jasa yang berbeda (semua paket). */
+export const JUMLAH_PENGGUNA_JASA = new Set(SEMUA_PAKET.map((p) => p.penggunaJasa)).size;
