@@ -77,7 +77,7 @@ export default function LayananPage() {
         crumbs={[{ label: "Layanan", href: "/layanan" }]}
         eyebrow="Layanan"
         title="Dari Studi Bisnis hingga Detail Teknis"
-        intro="Kami mendampingi proyek sejak studi kelayakan dan studi bisnis, lalu perencanaan arsitektur, sipil, MEP, dan kawasan, sampai pengawasan teknis. Seiring perkembangan zaman digitalisasi, kami juga melayani pembuatan aplikasi dan menyelenggarakan pelatihan untuk masyarakat."
+        intro="Kami mendampingi proyek sejak Studi Kelayakan dan Studi Bisnis, lalu melakukan Perencanaan Arsitektur, Sipil, MEP, Urban, sampai Manajemen Konstruksi.  Layanan ini kami lengkapi dengan pembuatan aplikasi IT dan menyelenggarakan pelatihan-pelatihan untuk masyarakat"
         actions={
           <>
             <ButtonLink href={waLink()} variant="gold">
