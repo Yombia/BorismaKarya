@@ -33,7 +33,7 @@ export type ServiceGroup = {
 export const SERVICE_GROUPS: ServiceGroup[] = [
   {
     key: "fisik",
-    title: "Perencanaan Fisik",
+    title: "Konsultasi Teknik",
     summary: "Perencanaan bangunan, prasarana, dan kawasan, dari konsep sampai Detail Engineering Design (DED).",
     items: [
       {
