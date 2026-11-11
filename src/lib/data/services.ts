@@ -94,8 +94,8 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         bidangFilter: "Perencanaan Wilayah",
       },
       {
-        key: "manajemen",
-        title: "Urban",
+        key: "manajemen konstruksi",
+        title: "Manajemen Konstruksi",
         scope: "Studi dan perencanaan kawasan perkotaan serta permukiman.",
         details: [
           "Studi dan perencanaan kawasan perkotaan",
