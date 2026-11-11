@@ -110,12 +110,12 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
   },
   {
     key: "studi",
-    title: "Studi & Riset",
+    title: "Konsultasi Bisnis",
     summary: "Studi kelayakan, kajian teknis, dan penelitian sebagai dasar pengambilan keputusan.",
     items: [
       {
         key: "riset",
-        title: "Riset & Studi Kelayakan",
+        title: "Studi Kelayakan, Studi Bisnis, Pelatihan",
         scope: "Studi kelayakan, studi bisnis, riset pertanian, kajian UMKM, dan kajian pengadaan tanah.",
         details: [
           "Studi kelayakan (feasibility study)",
