@@ -42,8 +42,8 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         title: "Arsitektur",
         scope: "Pekerjaan perencanaan arsitektur, interior, lanskap, pengawasan teknis, serta pengurusan PBG dan SLF.",
         details: [
-          "Perencanaan arsitektur bangunan dan kawasan",
-          "Perencanaan interior dan lanskap",
+          "Perencanaan dan Perancangan (meliputi Studi Kelayakan; analisis; konsep; perencanaan bangunan, interior dan lansekap)",
+          "Penyusunan Dokumen Perencanaan (gambar kerja arsitektur/ Detailed Engineering Design; spesifikasi teknis; Rencana Anggaran Biaya/ RAB)",
           "Pengurusan Persetujuan Bangunan Gedung (PBG)",
           "Pengurusan Sertifikat Laik Fungsi (SLF)",
         ],
