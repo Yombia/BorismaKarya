@@ -51,22 +51,6 @@ function ServiceRow({ service, code }: { service: Service; code: string }) {
         </ul>
 
         {service.extra && <p className="mt-6 max-w-[64ch] text-[15px] leading-relaxed text-ink-soft">{service.extra}</p>}
-
-        {examples.length > 0 && (
-          <div className="mt-8">
-            <p className="eyebrow text-ink-soft">Contoh paket pekerjaan</p>
-            <ul className="mt-3 divide-y divide-line border-y border-line">
-              {examples.map((p) => (
-                <li key={p.no} className="grid gap-1 py-3 sm:grid-cols-[1fr_auto] sm:gap-6">
-                  <span className="text-[15px] leading-snug text-ink">{p.paket}</span>
-                  <span className="text-sm text-ink-soft sm:text-right">
-                    {p.lokasi} · <span className="tabular-nums">{p.tahun}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
     </article>
   );
