@@ -35,7 +35,7 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
     key: "fisik",
     title: "Konsultasi Teknik",
     summary:
-      "Perencanaan bangunan, prasarana, dan kawasan, dari konsep sampai Detail Engineering Design (DED), serta pengawasan dan manajemen konstruksi.",
+      "Layanan teknik meliputi Perencanaan Arsitektur, Sipil, Mekanikal-Elektrikal-Plumbing (MEP), Urban, serta Manajemen Konstruksi, dan pengurusan PBG dan SLF.",
     items: [
       {
         key: "arsitektur",

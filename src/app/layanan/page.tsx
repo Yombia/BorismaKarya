@@ -30,11 +30,13 @@ function ServiceRow({ service, code }: { service: Service; code: string }) {
         <p className="text-sm font-bold tabular-nums text-gold-600">{code}</p>
         <h3 className="mt-2 text-2xl font-bold text-ink">{service.title}</h3>
         <p className="mt-3 leading-relaxed text-ink-soft">{service.scope}</p>
-        <dl className="mt-6 border-l-2 border-gold-500 pl-4">
-          <dt className="eyebrow text-ink-soft">Kepala departemen</dt>
-          <dd className="mt-1 font-semibold text-ink">{service.head.name}</dd>
-          {service.head.note && <dd className="mt-1 text-sm leading-relaxed text-ink-soft">{service.head.note}</dd>}
-        </dl>
+        {service.head && (
+          <dl className="mt-6 border-l-2 border-gold-500 pl-4">
+            <dt className="eyebrow text-ink-soft">Kepala departemen</dt>
+            <dd className="mt-1 font-semibold text-ink">{service.head.name}</dd>
+            {service.head.note && <dd className="mt-1 text-sm leading-relaxed text-ink-soft">{service.head.note}</dd>}
+          </dl>
+        )}
       </div>
 
       <div className="lg:col-span-8">
@@ -76,8 +78,8 @@ export default function LayananPage() {
       <PageHero
         crumbs={[{ label: "Layanan", href: "/layanan" }]}
         eyebrow="Layanan"
-        title="Dari Studi Bisnis hingga Detail Teknis"
-        intro="Kami mendampingi proyek sejak Studi Kelayakan dan Studi Bisnis, lalu melakukan Perencanaan Arsitektur, Sipil, MEP, Urban, sampai Manajemen Konstruksi.  Layanan ini kami lengkapi dengan pembuatan aplikasi IT dan menyelenggarakan pelatihan-pelatihan untuk masyarakat"
+        title="Dari studi bisnis hingga detail teknis."
+        intro="Kami mendampingi proyek sejak studi kelayakan dan studi bisnis, lalu perencanaan arsitektur, sipil, MEP, dan urban, sampai manajemen konstruksi. Layanan ini kami lengkapi dengan pembuatan aplikasi dan pelatihan untuk masyarakat."
         actions={
           <>
             <ButtonLink href={waLink()} variant="gold">
