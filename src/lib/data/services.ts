@@ -131,8 +131,8 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
   },
   {
     key: "pemberdayaan",
-    title: "Pemberdayaan & Digital",
-    summary: "Aplikasi untuk pemerintahan desa dan pelatihan keterampilan masyarakat.",
+    title: "Teknologi Informasi",
+    summary: "Website, Aplikasi, Data Analyst",
     items: [
       {
         key: "ti",
