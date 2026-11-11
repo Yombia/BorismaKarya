@@ -22,8 +22,9 @@ export function HomeHero() {
             Layanan Konsultasi Teknik, Bisnis, dan Pendampingan Masyarakat sejak {SITE.foundedYear}
           </h1>
           <p className="mt-6 max-w-[56ch] text-[1.0625rem] leading-[1.7] text-white/75">
-            CV. Borisma Karya memberikan layanan perencanaan teknik secara luas, meliputi desain arsitektur, sipil, Mekanikal-Elektrikal-Plumbing (MEP) dan urban.
-            Selain itu melakukan pengawasan teknis dan manajemen konstruksi, penyusunan studi kelayakan dan bisnis, dan teknologi informasi. Kami menyelenggarakan program pelatihan secara daring maupun luring sebagai bentuk layanan pendampingan masyarakat. Kami juga membantu pengurusan PBG dan SLF.
+            CV. Borisma Karya memberikan layanan teknik secara luas meliputi Arsitektur, Sipil, Mekanikal-Elektrikal-Plumbing (MEP), Urban, Manajemen Konstruksi.  Kami juga membantu pengurusan PBG dan SLF. 
+            Untuk bidang bisnis, kami melayani Penyusunan Studi Kelayakan, pendampingan masyarakat melalui  pelatihan secara daring maupun luring.
+            Di era teknologi digital ini kami juga menyediakan jasa pembuatan aplikasi.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href={waLink()} variant="gold">

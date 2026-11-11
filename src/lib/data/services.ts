@@ -93,6 +93,19 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         examples: [92, 91, 1],
         bidangFilter: "Perencanaan Wilayah",
       },
+      {
+        key: "manajemen",
+        title: "Urban",
+        scope: "Studi dan perencanaan kawasan perkotaan serta permukiman.",
+        details: [
+          "Studi dan perencanaan kawasan perkotaan",
+          "Kajian penetapan lokasi pengadaan lahan",
+          "Perencanaan kawasan permukiman",
+        ],
+        head: { name: "Mahyuddin, ST", note: "SKK Ahli Madya Perencanaan Tata Ruang Wilayah dan Kota" },
+        examples: [92, 91, 1],
+        bidangFilter: "Perencanaan Wilayah",
+      },
     ],
   },
   {
