@@ -40,7 +40,7 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       {
         key: "arsitektur",
         title: "Arsitektur",
-        scope: "Pekerjaan perencanaan arsitektur, interior, lanskap, pengawasan teknis, serta pengurusan PBG dan SLF.",
+        scope: "Pekerjaan perencanaan arsitektur, interior, lanskap, serta pengurusan PBG dan SLF.",
         details: [
           "Perencanaan dan Perancangan (meliputi Studi Kelayakan; analisis; konsep; perencanaan bangunan, interior dan lansekap)",
           "Penyusunan Dokumen Perencanaan (gambar kerja arsitektur/ Detailed Engineering Design; spesifikasi teknis; Rencana Anggaran Biaya/ RAB)",
@@ -54,11 +54,13 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       {
         key: "sipil",
         title: "Sipil",
-        scope: "Struktur bangunan gedung, sipil transportasi (jalan, jembatan, dermaga), dan sipil keairan.",
+        scope: "Pekerjaan perencanaan sipil, pengawasan teknis, serta pengurusan PBG dan SLF.",
         details: [
-          "Perencanaan struktur bangunan gedung",
-          "Sipil transportasi: jalan, jembatan, dermaga, dan tatanan transportasi lokal",
-          "Sipil keairan dan irigasi",
+          "Survey dan Pengujian (uji kekuatan tanah, dan uji kekuatan struktur)",
+          "Perencanaan dan Perancangan (meliputi perencanaan struktur bangunan gedung, sipil transportasi, dan sipil keairan)",
+          "Penyusunan Dokumen Perencanaan (gambar kerja sipil/ Detailed Engineering Design; perhitungan struktur; spesifikasi teknis; Rencana Anggaran Biaya/ RAB)",
+          "Pengurusan Persetujuan Bangunan Gedung (PBG)",
+          "Pengurusan Sertifikat Laik Fungsi (SLF)",
         ],
         head: { name: "Jeppri Lumbantungkup, ST" },
         examples: [82, 80, 3],
