@@ -13,8 +13,8 @@ export type Service = {
   scope: string;
   /** Rincian lingkup pekerjaan sesuai company profile. */
   details: string[];
-  /** Kepala departemen menurut struktur organisasi. */
-  head: { name: string; note?: string };
+  /** Kepala departemen menurut struktur organisasi. Kosongkan bila belum dikonfirmasi. */
+  head?: { name: string; note?: string };
   /** Nomor paket pada tabel pengalaman yang dijadikan contoh. */
   examples: number[];
   /** Bidang terkait di data pengalaman (pengelompokan statistik). */
@@ -34,15 +34,16 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
   {
     key: "fisik",
     title: "Konsultasi Teknik",
-    summary: "Perencanaan bangunan, prasarana, dan kawasan, dari konsep sampai Detail Engineering Design (DED).",
+    summary:
+      "Perencanaan bangunan, prasarana, dan kawasan, dari konsep sampai Detail Engineering Design (DED), serta pengawasan dan manajemen konstruksi.",
     items: [
       {
         key: "arsitektur",
         title: "Arsitektur",
-        scope: "Arsitektur, interior, lansekap, serta pengurusan PBG dan SLF.",
+        scope: "Arsitektur, interior, lanskap, serta pengurusan PBG dan SLF.",
         details: [
           "Perencanaan arsitektur bangunan dan kawasan",
-          "Perencanaan interior dan lansekap",
+          "Perencanaan interior dan lanskap",
           "Pengurusan Persetujuan Bangunan Gedung (PBG)",
           "Pengurusan Sertifikat Laik Fungsi (SLF)",
         ],
@@ -94,28 +95,27 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         bidangFilter: "Perencanaan Wilayah",
       },
       {
-        key: "manajemen konstruksi",
+        key: "manajemen-konstruksi",
         title: "Manajemen Konstruksi",
-        scope: "Studi dan perencanaan kawasan perkotaan serta permukiman.",
+        scope: "Pengawasan teknis dan manajemen konstruksi pembangunan gedung, jalan, dan fasilitas publik.",
         details: [
-          "Studi dan perencanaan kawasan perkotaan",
-          "Kajian penetapan lokasi pengadaan lahan",
-          "Perencanaan kawasan permukiman",
+          "Pengawasan teknis pelaksanaan pembangunan",
+          "Supervisi pembangunan gedung dan rehabilitasi bangunan",
+          "Pengawasan pembangunan jalan",
         ],
-        head: { name: "Mahyuddin, ST", note: "SKK Ahli Madya Perencanaan Tata Ruang Wilayah dan Kota" },
-        examples: [92, 91, 1],
-        bidangFilter: "Perencanaan Wilayah",
+        // [KONFIRMASI] Penanggung jawab bidang ini belum ada di struktur organisasi.
+        examples: [7, 8, 24],
       },
     ],
   },
   {
     key: "studi",
     title: "Konsultasi Bisnis",
-    summary: "Studi kelayakan, kajian teknis, dan penelitian sebagai dasar pengambilan keputusan.",
+    summary: "Studi kelayakan, studi bisnis, dan pelatihan sebagai dasar pengambilan keputusan dan pengembangan usaha.",
     items: [
       {
         key: "riset",
-        title: "Studi Kelayakan, Studi Bisnis, Pelatihan",
+        title: "Studi Kelayakan & Studi Bisnis",
         scope: "Studi kelayakan, studi bisnis, riset pertanian, kajian UMKM, dan kajian pengadaan tanah.",
         details: [
           "Studi kelayakan (feasibility study)",
@@ -127,22 +127,6 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         examples: [95, 23, 9],
         bidangFilter: "Studi & Penelitian",
       },
-    ],
-  },
-  {
-    key: "pemberdayaan",
-    title: "Teknologi Informasi",
-    summary: "Website, Aplikasi, Data Analyst",
-    items: [
-      {
-        key: "ti",
-        title: "Teknologi Informasi",
-        scope: "Aplikasi, website, dan media promosi untuk instansi dan swasta.",
-        details: ["Pengembangan aplikasi dan website", "Media promosi digital", "Pelatihan penggunaan aplikasi"],
-        head: { name: "Parulian, M.Kom" },
-        examples: [87],
-        bidangFilter: "Teknologi Informasi",
-      },
       {
         key: "pelatihan",
         title: "Pelatihan & Event",
@@ -152,6 +136,27 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         examples: [],
         extra:
           "Contoh kegiatan: pelatihan payet, salon, budidaya jamur tiram, dan menjahit dasar untuk warga Kelurahan Bangun Mulia, Kecamatan Medan Amplas.",
+      },
+    ],
+  },
+  {
+    key: "pemberdayaan",
+    title: "Teknologi Informasi",
+    summary: "Website, aplikasi, dan analisis data untuk instansi dan swasta.",
+    items: [
+      {
+        key: "ti",
+        title: "Website, Aplikasi & Analisis Data",
+        scope: "Website, aplikasi, analisis data, dan media promosi untuk instansi dan swasta.",
+        details: [
+          "Pengembangan website dan aplikasi",
+          "Analisis data",
+          "Media promosi digital",
+          "Pelatihan penggunaan aplikasi",
+        ],
+        head: { name: "Parulian, M.Kom" },
+        examples: [87],
+        bidangFilter: "Teknologi Informasi",
       },
     ],
   },
