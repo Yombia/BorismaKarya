@@ -88,11 +88,11 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       {
         key: "urban",
         title: "Urban",
-        scope: "Studi dan perencanaan kawasan perkotaan serta permukiman.",
+        scope: "Perencanaan Tata Ruang dan Wilayah, Perencanaan dan Pengembangan Kawasan, dan Pemetaan Spasial",
         details: [
-          "Studi dan perencanaan kawasan perkotaan",
-          "Kajian penetapan lokasi pengadaan lahan",
-          "Perencanaan kawasan permukiman",
+          "Perencanaan Tata Ruang dan Wilayah (Penyusunan Rencana Tata Ruang Wilayah (RTRW); Rencana Detail Tata Ruang (RDTR); Kajian Kesesuaian Pemanfaatan Ruang (KKPR); kajian lokasi pengadaan lahan)",
+          "Perencanaan dan Pengembangan Kawasan (Penyusunan Master Plan Kawasan; perencanaan kawasan perdagangan & jasa, kawasan permukiman, kawasan industri & pergudangan, kawasan wisata & rekreasi; perencanaan infrastruktur & transportasi)",
+          "Pemetaan spasial dengan GIS",
         ],
         head: { name: "Mahyuddin, ST", note: "SKK Ahli Madya Perencanaan Tata Ruang Wilayah dan Kota" },
         examples: [92, 91, 1],
