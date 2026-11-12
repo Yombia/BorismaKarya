@@ -60,7 +60,7 @@ export default function LayananPage() {
       <PageHero
         crumbs={[{ label: "Layanan", href: "/layanan" }]}
         eyebrow="Layanan"
-        title="Dari studi bisnis hingga detail teknis."
+        title="Dari Studi Bisnis hingga Detail Teknis"
         intro="Kami mendampingi proyek sejak studi kelayakan dan studi bisnis, lalu perencanaan arsitektur, sipil, MEP, dan urban, sampai manajemen konstruksi. Layanan ini kami lengkapi dengan pembuatan aplikasi dan pelatihan untuk masyarakat."
         actions={
           <>
