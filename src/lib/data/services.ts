@@ -101,11 +101,10 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       {
         key: "manajemen-konstruksi",
         title: "Manajemen Konstruksi",
-        scope: "Pengawasan teknis dan manajemen konstruksi pembangunan gedung, jalan, dan fasilitas publik.",
+        scope: "Manajemen Pra-Konstruksi dan Manajemen Pelaksanaan Konstruksi untuk pekerjaan Arsitektur, Sipil Mekanikal, Elektrikal dan Plambing.",
         details: [
-          "Pengawasan teknis pelaksanaan pembangunan",
-          "Supervisi pembangunan gedung dan rehabilitasi bangunan",
-          "Pengawasan pembangunan jalan",
+          "Manajemen Pra-Konstruksi (meliputi persiapan administratif; identifikasi dan analisis risiko proyek; strategi dan metode pelaksanaan)",
+          "Manajemen Pelaksanaan Konstruksi (meliputi manajemen mutu dan keselamatan konstruksi; manajemen pengendalian biaya dan waktu; koordinasi unsur proyek; monitoring dan evaluasi; dan pelaporan)",
         ],
         // [KONFIRMASI] Penanggung jawab bidang ini belum ada di struktur organisasi.
         examples: [7, 8, 24],
