@@ -54,7 +54,7 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       {
         key: "sipil",
         title: "Sipil",
-        scope: "Pekerjaan perencanaan sipil, pengawasan teknis, serta pengurusan PBG dan SLF.",
+        scope: "Pekerjaan survey dan pengujian, perencanaan sipil, serta pengurusan PBG dan SLF",
         details: [
           "Survey dan Pengujian (uji kekuatan tanah, dan uji kekuatan struktur)",
           "Perencanaan dan Perancangan (meliputi perencanaan struktur bangunan gedung, sipil transportasi, dan sipil keairan)",
@@ -71,10 +71,11 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         title: "Mekanikal & Elektrikal",
         scope: "Tata udara (HVAC), lift, pemipaan air bersih, air limbah, dan gas, serta kelistrikan.",
         details: [
-          "Sistem tata udara (HVAC)",
-          "Lift",
-          "Sistem pemipaan: air bersih, air limbah, dan gas",
-          "Sistem kelistrikan bangunan",
+          "Konsultansi Mekanikal (meliputi perencanaan sistem tata udara dan ventilasi (HVAC); sistem proteksi kebakaran; sistem transportasi vertikal (lift dan eskalator); sistem pompa; spesifikasi teknis, perhitungan RAB; evaluasi dan audit mekanikal bangunan)",
+          "Konsultansi Elektrikal (meliputi perencanaan instalasi listrik; penerangan; proteksi petir; genset; UPS; sistem komunikasi dan jaringan data; CCTV; spesifikasi teknis; perhitungan kebutuhan daya dan RAB; evaluasi dan audit elektrikal bangunan)",
+          "Konsultansi Plumbing (meliputi perencanaan air bersih; air kotor dan air hujan; pengolahan air limbah (IPAL/STP); perhitungan kebutuhan air dan kapasitas pompa; spesifikasi teknis; RAB; evaluasi dan audit sanitasi dan plumbing bangunan)",
+          "Pengurusan Sertifikat Laik Fungsi (SLF)",
+          "Pengurusan Persetujuan Bangunan Gedung (PBG)",
         ],
         head: {
           name: "Krisnadi T.A.P Naibaho, ST",
