@@ -68,7 +68,7 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       },
       {
         key: "me",
-        title: "Mekanikal & Elektrikal",
+        title: "Mekanikal, Elektrikal & Plumbing",
         scope: "Tata udara (HVAC), lift, pemipaan air bersih, air limbah, dan gas, serta kelistrikan.",
         details: [
           "Konsultansi Mekanikal (meliputi perencanaan sistem tata udara dan ventilasi (HVAC); sistem proteksi kebakaran; sistem transportasi vertikal (lift dan eskalator); sistem pompa; spesifikasi teknis, perhitungan RAB; evaluasi dan audit mekanikal bangunan)",
